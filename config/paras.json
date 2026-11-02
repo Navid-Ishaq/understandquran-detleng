@@ -1,0 +1,21 @@
+{
+  "description": "Vocabulary Para files use the existing DeTLeng DOCX parser with no text transformation.",
+  "languages": {
+    "urdu": {
+      "code": "ur",
+      "folder": "urdu",
+      "enabled": true
+    },
+    "english": {
+      "code": "en",
+      "folder": "english",
+      "enabled": false
+    },
+    "urdu-english": {
+      "code": "ur-en",
+      "folder": "urdu-english",
+      "enabled": false
+    }
+  },
+  "count": 30
+}
