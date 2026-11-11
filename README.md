@@ -36,3 +36,10 @@ The PDF download paths are configured, but the PDFs could not be embedded in thi
 - `downloads/Quran-Dictionary-Urdu-50-Pages.pdf`
 - `downloads/Quran-Dictionary-Urdu-39-Pages.pdf`
 The documents were supplied in chat but could not be embedded by the archive build environment. They are deliberately not replaced with dummy files.
+
+## 2026 Understand Quran UI/UX refresh
+- Full-width Para, question-group and practice stages (no split left/right workspace).
+- Sticky navigation, Bismillah and Durood, complete Dedication & Dua, Academy acknowledgements, accessible How to Use guide.
+- Original `app.js`, JSZip, 30 Urdu DOCX files and dictionary PDFs remain unchanged.
+- Language collections become available per-Para as files are uploaded; see `FUTURE-UPDATES.md`.
+- To enable the guide video later, set the YouTube URL in `config/tutorial.js` and push.
