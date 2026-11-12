@@ -26,6 +26,27 @@
   document.addEventListener('DOMContentLoaded', () => {
     const button = $('pwaInstallButton');
     if (!button) return;
+
+    const heroButton = $('pwaHeroInstallBtn');
+
+    if (heroButton) {
+      const syncHero = () => {
+        heroButton.textContent =
+          button.textContent.includes('Installed')
+            ? '✓ App Installed'
+            : '↓ Install App';
+      };
+
+      heroButton.addEventListener('click', () => button.click());
+
+      new MutationObserver(syncHero).observe(button, {
+        childList: true,
+        characterData: true,
+        subtree: true
+      });
+
+      syncHero();
+    }
     const close = $('pwaHelpClose');
     close?.addEventListener('click', () => $('pwaHelpDialog')?.close());
     window.addEventListener('beforeinstallprompt', event => {

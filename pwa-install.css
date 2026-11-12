@@ -12,3 +12,85 @@
 .pwa-dialog h2{font-size:23px;margin:0 0 12px}.pwa-dialog p,.pwa-dialog li{font-size:15px;line-height:1.7}.pwa-dialog ol{padding-left:23px}.pwa-close{display:block;margin:18px 0 0 auto;border:0;border-radius:10px;padding:10px 17px;background:#154838;color:white;font-weight:700;cursor:pointer}
 .dark .pwa-panel{background:linear-gradient(120deg,#15352d,#1f4133);border-color:#426c5b}.dark .pwa-copy h2{color:#eaf6ef}.dark .pwa-copy p:not(.eyebrow),.dark .pwa-small{color:#d0e4d9}.dark .pwa-dialog{background:#1d332c;color:#f3faf5}
 @media(max-width:720px){.pwa-panel{flex-wrap:wrap;gap:13px;padding:18px}.pwa-icon{height:86px;width:86px;flex-basis:86px;border-radius:19px}.pwa-copy{flex-basis:calc(100% - 104px);min-width:0}.pwa-actions{width:100%}.pwa-button{width:100%}}
+
+/* Centered glowing PWA install button beneath Durood */
+.uq-hero-install {
+  text-align: center;
+  margin: 28px auto 20px;
+  padding: 0 15px;
+}
+
+.uq-hero-install-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 190px;
+  min-height: 54px;
+  padding: 14px 30px;
+  border: 1px solid #d7b56d;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #104b3b, #18765b);
+  color: #fff;
+  font: 700 17px/1.3 inherit;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 0 16px rgba(189,150,60,.30);
+  animation: uqInstallGlow 2.8s ease-in-out infinite;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.uq-hero-install-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  background: #0d604b;
+}
+
+.uq-hero-install-btn:focus-visible {
+  outline: 3px solid #d8a846;
+  outline-offset: 4px;
+}
+
+.uq-hero-install-note {
+  font-size: 13px;
+  color: #54766b;
+  margin: 12px auto 0;
+}
+
+.uq-footer-extra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  padding: 20px 0;
+}
+
+.uq-footer-extra a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.dark .uq-hero-install-note {
+  color: #c6dfd2;
+}
+
+@keyframes uqInstallGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(201,157,57,.22);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(220,177,65,.55),
+      0 0 36px rgba(20,130,92,.27);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uq-hero-install-btn {
+    animation: none;
+  }
+}
