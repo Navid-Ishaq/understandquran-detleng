@@ -28,7 +28,7 @@
   }
   function render(){
     grid.replaceChildren();
-    notice.textContent=`${collections[currentLanguage].label} vocabulary · Choose a Para. Available DOCX files open automatically.`;
+    notice.textContent=({urdu:'قرآن کے الفاظ سیکھیے، ان کے معنی سمجھیے۔',english:'Learn Quranic words. Discover their meanings.','urdu-english':'Explore Quranic vocabulary through Urdu and English.'})[currentLanguage];
     for(let n=1;n<=30;n++){
       const button=document.createElement('button');
       button.type='button';button.className='para-card';button.dataset.para=n;
@@ -39,7 +39,7 @@
     if(currentPara!==null)grid.querySelector(`[data-para="${currentPara}"]`)?.classList.add('selected');
   }
   function showComingSoon(n,language){
-    document.getElementById('comingSoonDetail').textContent=`Para ${String(n).padStart(2,'0')} · ${collections[language].label} vocabulary will be available when its Word document is added. Coming Soon, Insha Allah!`;
+    document.getElementById('comingSoonDetail').textContent=`Para ${String(n).padStart(2,'0')} · ${collections[language].label} learning materials are being prepared. Coming Soon, Insha Allah!`;
     if(!dialog.open)dialog.showModal();
   }
   async function pick(n,language){
@@ -53,22 +53,22 @@
       if(response.status===404){notice.textContent=`${collections[language].label} · Para ${String(n).padStart(2,'0')} is being prepared, Insha Allah.`;showComingSoon(n,language);return;}
       if(!response.ok)throw new Error(`HTTP ${response.status}`);
       const blob=await response.blob();
-      if(!blob.size)throw new Error('The Word document is empty.');
+      if(!blob.size)throw new Error('This learning section is not ready yet.');
       const signature=new Uint8Array(await blob.slice(0,4).arrayBuffer());
-      if(signature[0]!==80 || signature[1]!==75)throw new Error('The file is not a valid DOCX archive.');
+      if(signature[0]!==80 || signature[1]!==75)throw new Error('This learning section could not be opened.');
       if(request!==currentRequest)return;
       const file=new File([blob],filename,{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
       await handleFile(file);
       if(request!==currentRequest)return;
       const summary=document.getElementById('fileSummary');
-      if(summary.classList.contains('hidden') || state.name!==filename || !state.rows.length)throw new Error('The DOCX question bank could not be read.');
+      if(summary.classList.contains('hidden') || state.name!==filename || !state.rows.length)throw new Error('This learning section could not be opened.');
       updateSelected(n,language);
       notice.textContent=`Para ${String(n).padStart(2,'0')} · ${collections[language].label} ready. Choose a question group.`;
       if(typeof window.UQExperience!=='undefined')window.UQExperience.showStage('groups');
       else document.getElementById('workspace').scrollIntoView({behavior:'smooth',block:'start'});
     }catch(err){
       if(request!==currentRequest)return;
-      notice.textContent=`Unable to load ${filename}: ${err.message}`;
+      notice.textContent=`This Para is temporarily unavailable. Please try again later.`;
       console.error('Understand Quran DOCX load:',err);
     }
   }

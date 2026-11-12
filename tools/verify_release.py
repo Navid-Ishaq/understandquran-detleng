@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys,zipfile
 root=Path(__file__).resolve().parent.parent
-needed=['index.html','how-to-use.html','how-to-use.js','uq-experience.js','uq-experience.css',
+needed=['index.html','how-to-use.html','how-to-use.js','uq-experience.js','uq-experience.css','uq-reading.js',
         'quran-paras.js','app.js','CNAME','FUTURE-UPDATES.md','config/tutorial.js',
         'downloads/Quran-Dictionary-Urdu-39-Pages.pdf','downloads/Quran-Dictionary-Urdu-50-Pages.pdf']
 missing=[x for x in needed if not (root/x).is_file()]
@@ -12,7 +12,7 @@ for p in range(1,31):
 for lang in ['english','urdu-english']:
     if not (root/'data'/lang).is_dir():missing.append('data/'+lang)
 html=(root/'index.html').read_text(encoding='utf-8')
-for key in ['id="dedication"','id="practiceScreen"','id="groupSelectionScreen"','id="restartBtn"','how-to-use.html']:
+for key in ['id="motivation"','id="practiceScreen"','id="groupSelectionScreen"','id="restartBtn"','how-to-use.html']:
     if key not in html:missing.append('index.html missing '+key)
 if 'Irfan-ul-Quran' in html:missing.append('Incorrect project branding')
 print('Urdu DOCX files:',len(list((root/'data/urdu').glob('Para-??-ur.docx'))))

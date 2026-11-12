@@ -1,8 +1,8 @@
 (() => {
   'use strict';
   const steps=[
-    ['🌐','Choose your translation language','Urdu is available now. English and Urdu + English are future-ready: their Paras become available as soon as the corresponding DOCX files are uploaded.'],
-    ['📖','Select one of the 30 Paras','Choose a Para card. If its file is available, the website loads its Word document automatically; otherwise a clear Coming Soon message appears.'],
+    ['🌐','Choose your translation language','Urdu is available now. English and Urdu + English are future-ready: more learning collections are planned for future updates.'],
+    ['📖','Select one of the 30 Paras','Choose a Para card. Then choose the question group you want to practise. Upcoming learning sections display a Coming Soon message.'],
     ['🔢','Select a question group','Choose All questions, a group of 10, or manually set a question range. Press Generate Flashcards to open the full-width practice screen.'],
     ['🧠','Choose MCQ or Classic Flashcard','In MCQ Learning Mode, pick one of three answers and get instant feedback. Test Mode shows results after completion. In Classic mode, think of the answer and flip the card.'],
     ['↔','Navigate and return safely','Use Previous and Next, or select a question number from Quiz Navigation. Back to Question Groups lets you choose another set. Restart is separated from navigation and always asks for confirmation.'],

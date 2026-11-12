@@ -65,3 +65,45 @@ body.dark .restart-safe{color:#ffd1be!important}
 @media(max-width:1100px){#topNavigation .nav{gap:7px}#topNavigation .nav a{font-size:12px}.academy-resource{grid-template-columns:1fr}}
 @media(max-width:850px){#topNavigation{top:4px;max-width:calc(100% - 12px)}.practice-stage-nav{align-items:stretch;flex-direction:column}.practice-stage-meta{justify-content:space-between}.opening-prayer{margin-top:30px}.dedication-section{padding:45px 0}}
 @media(max-width:600px){.workspace-stages .settings-card,.workspace-stages #previewPanel{padding:15px;border-radius:14px}.workspace-stages .range-group-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.workspace-stages .range-group-btn{min-height:80px}.workspace-stages .study-toolbar{gap:5px}.workspace-stages .study-toolbar button{padding:10px 5px;font-size:12px}.dedication-text{padding:0 4px}.urdu-dua{font-size:20px}.academy-resource{padding:18px}.practice-stage-meta{gap:10px}}
+
+/* Round-two UI: learner-focused typography and balanced MCQ layout. */
+#motivation{scroll-margin-top:145px}
+.motivation-section{padding:clamp(46px,7vw,92px) 0;background:var(--cream);border-top:1px solid var(--border)}
+.motivation-wrap{max-width:1030px}.motivation-head{text-align:center;max-width:910px;margin:0 auto 24px}
+.motivation-head h2{font-family:Georgia,serif;font-size:clamp(33px,4.2vw,52px);line-height:1.15;margin:8px auto;color:var(--ink)}
+.motivation-tagline{font-size:clamp(17px,2vw,22px);font-weight:600;color:var(--text)}
+.motivation-urdu-title{font-family:'Noto Nastaliq Urdu',serif;font-size:clamp(20px,2.5vw,28px);line-height:2.5;color:var(--teal)}
+.motivation-lang-select{display:flex;justify-content:center;gap:10px;margin:14px auto 24px}
+.motivation-lang{background:var(--panel);color:var(--ink);border:1px solid var(--border);border-radius:12px;padding:11px 25px;font:inherit;cursor:pointer;font-weight:700}
+.motivation-lang.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.motivation-copy{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:clamp(20px,4vw,46px);box-shadow:0 10px 38px #173e3410}
+.motivation-copy[hidden]{display:none!important}
+.motivation-copy h3{font-family:Georgia,serif;font-size:clamp(24px,3vw,34px);line-height:1.45;color:var(--ink);margin:0 0 20px}
+.motivation-copy p{font-size:17px;line-height:1.95;color:var(--text)}
+.motivation-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0 38px}
+.motivation-points>div{padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--light)}
+.motivation-points h4{margin:0 0 8px;font-size:18px;color:var(--ink)}.motivation-points p{margin:0;font-size:16px}
+.motivation-urdu{font-family:'Noto Nastaliq Urdu','Noto Naskh Arabic',serif;text-align:right}
+.motivation-urdu h3{font-family:'Noto Nastaliq Urdu',serif;font-size:clamp(21px,2.7vw,30px);line-height:2.25}
+.motivation-urdu p{font-size:clamp(18px,2vw,23px);line-height:2.55}
+.motivation-urdu .motivation-points h4{font-size:21px;line-height:2.15}
+.motivation-urdu .motivation-points p{font-size:19px;line-height:2.4}
+.motivation-finale{text-align:center;font-weight:700;color:var(--teal)!important;margin-top:30px}
+.motivation-footnote{text-align:center;font-size:14px;line-height:1.85;color:var(--muted);margin:22px auto 0}
+.reading-size-controls{display:flex;gap:11px;align-items:center;justify-content:center;flex-wrap:wrap;padding:13px 16px;margin:8px auto 18px;background:var(--light);border-radius:16px;border:1px solid var(--border);max-width:720px}
+.reading-size-title{font-weight:700;font-size:13px;color:var(--ink);margin-right:4px}
+.reading-size-controls input[type=range]{width:clamp(95px,17vw,220px);accent-color:var(--teal);cursor:pointer}
+.reading-control,.reading-reset{font:inherit;font-weight:800;color:var(--ink);background:var(--panel);border:1px solid var(--border);border-radius:10px;min-width:39px;min-height:39px;cursor:pointer}
+.reading-control{font-size:23px}.reading-reset{padding:5px 13px;font-size:14px}
+#readingSizeValue{font-weight:700;min-width:44px;text-align:center;font-variant-numeric:tabular-nums}
+.workspace-stages .flip-card .question-text.uq-centered-question{font-size:var(--uq-reading-size,24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;line-height:1.9;min-height:94px}
+.workspace-stages .question-text .uq-arabic-focus{display:block;font-family:'Noto Naskh Arabic',serif;font-size:clamp(26px,calc(var(--uq-reading-size,24px) * 1.55),64px);font-weight:650;line-height:1.9;text-align:center;overflow-wrap:anywhere;max-width:100%}
+.workspace-stages .question-text .uq-reference{display:block;font:600 13px/1.5 'DM Sans',Arial,sans-serif;color:var(--muted);letter-spacing:.04em;direction:ltr;text-align:center;border-radius:7px;padding:3px 8px;background:var(--light)}
+.workspace-stages .option{display:grid;grid-template-columns:38px minmax(0,1fr) 38px;gap:10px;align-items:center;text-align:center;min-height:69px}
+.workspace-stages .option::after{content:'';width:38px;display:block;grid-column:3}
+.workspace-stages .option-letter{grid-column:1;justify-self:center;align-self:center}
+.workspace-stages .option>span:last-of-type{grid-column:2;text-align:center;justify-self:stretch;align-self:center;font-family:'Noto Nastaliq Urdu','Noto Naskh Arabic',serif;font-size:var(--uq-reading-size,24px);line-height:2.15;overflow-wrap:anywhere;unicode-bidi:plaintext}
+.workspace-stages .answer-value{font-size:var(--uq-reading-size,24px);text-align:center;line-height:2.2}
+body.dark .motivation-copy{background:#1a3831}body.dark .motivation-points>div{background:#203b32}body.dark .motivation-lang:not(.active){background:#1a3831;color:#edf9f0}
+body.dark .reading-size-controls{background:#203b32}body.dark .reading-control,body.dark .reading-reset{background:#1a3831;color:#eff8f2}
+@media(max-width:650px){.motivation-points{grid-template-columns:1fr}.reading-size-controls{gap:7px;padding:10px 8px}.reading-size-title{width:100%;text-align:center}.workspace-stages .option{grid-template-columns:32px minmax(0,1fr) 32px;gap:5px;padding:10px 6px}.workspace-stages .option::after{width:32px}.motivation-urdu .motivation-points p{font-size:18px}}

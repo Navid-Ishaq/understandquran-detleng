@@ -37,3 +37,12 @@ Check Urdu Para 01, an English Para whose file is missing, an English Para after
 Understand Al Quran Academy: https://understandquran.com/
 Original Quran Dictionaries: https://understandquran.com/quran-dictionaries/quran-dictionaries-english/
 This site is an independent DeTLeng educational project, not the Academy's official site. Check redistribution permission for third-party PDF and translations.
+
+
+## November 2026 reading and motivation UI update
+- Motivation replaces the public dedication section; English and Urdu text are part of `index.html`.
+- The top navigation links to `#motivation` instead of `#dedication`.
+- The Video Guide has its player placeholder above the interactive six-step guide. To enable the video, edit only `config/tutorial.js` with the published YouTube URL and push.
+- The MCQ Arabic question is visually separated from its reference by `uq-reading.js`; the original data and `app.js` are unchanged.
+- Reading size persists in browser localStorage, while only question/answer presentation is adjusted.
+- English and bilingual learning collections remain automatic per-Para using their existing directories and filenames.
